@@ -27,7 +27,7 @@ pipeline {
                 sh 'gcc main.c -o app'
             }
         }
-    }
+    
         stage('Интеграционные тесты (Test)') {
             steps {
                 echo 'Запуск тестов работоспособности...'
@@ -35,6 +35,7 @@ pipeline {
                 sh './test.sh'
             }
 	}
+    }
 
     post {
         success {
