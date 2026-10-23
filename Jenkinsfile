@@ -24,7 +24,7 @@ pipeline {
         stage('Сборка приложения (Build)') {
             steps {
                 echo 'Компиляция файла main.c...'
-                sh 'gcc main.c -o app'
+                sh 'gcc -static main.c -o app'
             }
         }
     
