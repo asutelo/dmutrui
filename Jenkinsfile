@@ -1,12 +1,19 @@
 pipeline {
     agent {
         docker { 
-            image 'gcc:latest' 
+            image 'alpine:latest' 
         }
     }
     
     stages {
-        stage('Проверка кода (Lint)') {
+	stage('Подготовка окроужения') {
+	    steps {
+		echo 'Установка компилятора'
+		sh 'apk add --no-cache build-base bash'
+	    }
+	}
+
+        stage('Проверка кода') {
             steps {
                 echo 'Проверяем, что исходный код на месте...'
                 sh 'test -f main.c'
