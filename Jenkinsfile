@@ -51,7 +51,7 @@ pipeline {
 
     post {
         success { echo 'Всё прошло успешно' }
-        failure { echo 'Сборка упала' }
+        failure { echo 'Сборка упалasdа' }
         always  { echo 'Выполняется всегда' }
     }
 }
